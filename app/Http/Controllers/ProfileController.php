@@ -23,7 +23,7 @@ class ProfileController extends Controller
     ->get();
 
 
-    return view('profPage',[
+    return view('profile',[
       'photo'=> $photo
     ]);
   }
