@@ -12,7 +12,7 @@ class UploadController extends Controller
   {
     //get areas and ids to fill dropdown
     $photos = Photo::join('areas', 'photos.area_id', '=', 'areas.id')
-       ->select('area', 'areas.id')->distinct()
+       ->select('area', 'areas.id','area_id')->distinct()
        ->get();
        return view('upload.upload', [
          'photos'=> $photos,
@@ -33,10 +33,7 @@ class UploadController extends Controller
 
       //flash messaging
       $link = request('link');
-      $title = request('title');
-      $artist = request('artist');
-      $location = request('address');
-       $area = request('area');
+
       if($link == ""){
         return redirect('/upload')
         ->with('successStatus', 'Please enter a photo link!');
