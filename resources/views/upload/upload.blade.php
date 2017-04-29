@@ -138,13 +138,16 @@ box-shadow: 0px 2px 15px -2px rgba(0,0,0,0.75);
               </div>
 <div class="form-group">
     <label for="area">Area</label>
-                  <select class="textWidth form-control" name="area" id="area" type="text">
-                      <option disabled selected> -- select an option -- </option>
-                      @foreach($photos as $photo)
-                        <option value="{{$photo->aid}}">
-                          {{$photo->area}}
-                        </option>
-                      @endforeach
+
+    <div class="form-group">
+        <select class="textWidth form-control" name="area"  id="area" >
+            <option disabled selected> -- select an option -- </option>
+            @foreach($photos as $photo)
+              <option  value="{{$photo->area_id}}">
+                {{$photo->area}}
+              </option>
+            @endforeach
+
 
                       <input type="submit" value="Submit" class="btn btn-info" style="margin-top:20px;">
                   </select>
