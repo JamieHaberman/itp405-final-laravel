@@ -176,7 +176,7 @@
 
   <form method="get" action="/details" >
     @foreach ($photo as $photo)
-    <a href="/details/{{$photo->photos.id}}"> <img src="{{$photo->link}}" style="margin:10px;"></a>
+    <img src="{{$photo->link}}" style="margin:10px;">
 
 
     </form>
